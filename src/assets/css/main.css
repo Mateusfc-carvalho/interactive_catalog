@@ -1,0 +1,39 @@
+.container-banner {
+  width: 100%;
+}
+
+.banner-image {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  image-rendering: optimizeQuality;
+  display: block;
+  padding-top: 20px;
+}
+
+@layer components {
+  /* Card Container */
+  .card-container {
+    @apply bg-white dark:bg-gray-900 rounded-lg shadow-md p-4 max-sm:w-72 transition-colors flex flex-col;
+  }
+  /* Wrapper para manter proporção sem cortar */
+  .card-image-wrapper {
+    @apply w-full aspect-square mb-4 overflow-hidden bg-gray-100 max-sm:h-48 dark:bg-gray-800 rounded-md;
+  }
+  /* Imagem responsiva sem cortar, mantendo qualidade */
+  .card-image {
+    @apply object-contain w-full h-full;
+  }
+  /* Título do card */
+  .card-title {
+    @apply text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2;
+  }
+  /* Preço */
+  .card-price {
+    @apply text-cyan-500 font-medium dark:text-emerald-500 mb-4;
+  }
+  /* Botão de compra */
+  .card-btn {
+    @apply mt-auto w-full cursor-pointer bg-blue-600 dark:bg-emerald-500 hover:bg-blue-700 dark:hover:bg-emerald-600  text-white font-medium py-2 rounded;
+  }
+}

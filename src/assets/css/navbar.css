@@ -1,0 +1,28 @@
+.txt-animation {
+  background: linear-gradient(
+    to left,
+    rgb(51, 204, 255),
+    rgb(22, 118, 187),
+    rgb(144, 74, 249),
+    rgb(51, 204, 255)
+  );
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: "Alumni Sans SC", sans-serif;
+  font-weight: 500;
+  animation: animatedText 3s ease-in-out infinite;
+}
+
+@keyframes animatedText {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}

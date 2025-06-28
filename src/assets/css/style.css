@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "./navbar.css";
+@import "./main.css";
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  overflow-x: hidden;
+}
+
+.format-text {
+  font-family: "Alumni Sans SC", sans-serif;
+}
+.responsive-text {
+  @apply md:text-6xl
+  sm:text-5xl text-4xl transition-all duration-300;
+}
+
+

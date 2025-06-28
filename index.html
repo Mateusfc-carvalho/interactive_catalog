@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Meu Catálogo</title>
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-900">
+    <header
+      class="bg-gray-200 w-full p-10 max-[403px]:p-0 dark:bg-gray-800 transition-colors duration-300 fixed top-0 left-0 z-50"
+      style="width: 100%"
+    >
+      <nav
+        class="flex flex-wrap justify-between items-center p-2 max-[403px]:flex-col-reverse gap-2"
+      >
+        <button
+          class="cursor-pointer hidden max-md:flex"
+          id="menu-toggler"
+          aria-label="abrir menu"
+        >
+          <img
+            src="./src/assets/imgs/menu.svg"
+            id="btnTogglerImage"
+            class="w-10 h-10"
+            alt="botão para abrir menu"
+          />
+        </button>
+        <h1 class="responsive-text txt-animation">Meu catálogo</h1>
+        <button
+          class="bg-white dark:bg-cyan-900 p-2 rounded-full cursor-pointer"
+          id="toggler-theme"
+          aria-label="alternar tema"
+        >
+          <img
+            src="./src/assets/imgs/moon.svg"
+            id="toggleThemeImage"
+            class="w-8 h-8"
+            alt="alternar icone"
+          />
+        </button>
+      </nav>
+      <ul
+        id="mobile-menu"
+        class="mobile-menu flex justify-evenly mb-4 gap-2 p-2 max-md:flex-col max-[403px]:text-center max-md:overflow-hidden max-h-0 transition-all duration-500 ease-in-out"
+      >
+        <li>
+          <a
+            href="#"
+            class="format-text block mt-2 text-xl font-medium text-black hover:bg-cyan-500 dark:text-white rounded-xl p-2 transition duration-200"
+            >Inicio</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="format-text block mt-2 text-xl font-medium text-black hover:bg-cyan-500 dark:text-white rounded-xl p-2 transition duration-200"
+            >Beleza</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="format-text block mt-2 text-xl font-medium text-black hover:bg-cyan-500 dark:text-white rounded-xl p-2 transition duration-200"
+            >Mobília</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="format-text block mt-2 text-xl font-medium text-black hover:bg-cyan-500 dark:text-white rounded-xl p-2 transition duration-200"
+            >Comida</a
+          >
+        </li>
+      </ul>
+    </header>
+    <!-- Espaço para compensar o header fixo -->
+    <div class="h-[160px]"></div>
+    <!-- banner -->
+    <main class="hero-section w-full max-[403px]:mt-2.5 flex flex-col items-center" id="hero-section">
+      <section class="container-banner">
+        <section class="banner">
+          <img
+            src="./src/assets/imgs/banner.png"
+            class="banner-image"
+            alt="banner"
+          />
+        </section>
+      </section>
+
+<div class="container mx-auto px-4 py-6">
+    <h2 class="text-3xl font-bold text-center format-text responsive-text txt-animation mb-6">
+      Beleza
+    </h2>
+
+    <!-- GRID RESPONSIVO -->
+    <div id="productList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-items-center">
+      <!-- Card Exemplo -->
+
+</main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
