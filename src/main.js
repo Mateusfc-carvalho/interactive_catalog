@@ -9,14 +9,26 @@ import { getProducts } from "./services/products.js";
 
 
 async function filterProducts() {
-  const data = await getProducts();
-  console.log(data);
+  const {products} = await getProducts();
+  const masterContainer = [...document.querySelectorAll('.container')];
 
- const containerList = document.querySelector('#productList');
- const card = createdcard();
- console.log(card);
- containerList.appendChild(card);
+  masterContainer.forEach((block) =>{
+    const containerList = block.querySelector('.productList');
+    const categoryTitle = [...block.querySelectorAll('.category-Title')];
 
+    categoryTitle.forEach((catEl) => {
+    const categoryName = catEl.textContent.trim();
+
+    const matchingProducts = products.filter((pdt) => pdt.category === categoryName);
+
+    matchingProducts.forEach((prod) => {
+      const card = createdcard(prod);
+      containerList.appendChild(card);
+    })
+
+   });
+  })
+  return masterContainer
 }
 
 filterProducts();

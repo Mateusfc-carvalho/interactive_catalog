@@ -14,97 +14,145 @@
   </head>
   <body class="bg-gray-100 dark:bg-gray-900">
     <header
-      class="bg-gray-200 w-full p-10 max-[403px]:p-0 dark:bg-gray-800 transition-colors duration-300 fixed top-0 left-0 z-50"
-      style="width: 100%"
+      class="fixed top-0 left-0 z-50 w-full bg-gray-200 p-10 transition-colors duration-300 dark:bg-gray-800 max-[403px]:p-0"
     >
       <nav
-        class="flex flex-wrap justify-between items-center p-2 max-[403px]:flex-col-reverse gap-2"
+        class="flex flex-wrap items-center justify-between gap-2 p-2 max-[403px]:flex-col-reverse"
       >
         <button
-          class="cursor-pointer hidden max-md:flex"
           id="menu-toggler"
           aria-label="abrir menu"
+          class="hidden cursor-pointer max-md:flex"
         >
           <img
-            src="./src/assets/imgs/menu.svg"
             id="btnTogglerImage"
-            class="w-10 h-10"
+            src="./src/assets/imgs/menu.svg"
+            class="h-10 w-10"
             alt="botão para abrir menu"
           />
         </button>
-        <h1 class="responsive-text txt-animation">Meu catálogo</h1>
+        <h1 class="responsive-text txt-animation">My Catalog</h1>
         <button
-          class="bg-white dark:bg-cyan-900 p-2 rounded-full cursor-pointer"
           id="toggler-theme"
           aria-label="alternar tema"
+          class="rounded-full bg-white p-2 transition-colors duration-300 dark:bg-cyan-900"
         >
           <img
-            src="./src/assets/imgs/moon.svg"
             id="toggleThemeImage"
-            class="w-8 h-8"
-            alt="alternar icone"
+            src="./src/assets/imgs/moon.svg"
+            class="h-8 w-8"
+            alt="alternar ícone"
           />
         </button>
       </nav>
       <ul
         id="mobile-menu"
-        class="mobile-menu flex justify-evenly mb-4 gap-2 p-2 max-md:flex-col max-[403px]:text-center max-md:overflow-hidden max-h-0 transition-all duration-500 ease-in-out"
+        class="mobile-menu max-md:overflow-hidden max-md:flex max-md:flex-col max-md:text-center mb-4 flex justify-evenly gap-2 max-h-0 p-2 transition-all duration-500 ease-in-out"
       >
         <li>
           <a
-            href="#"
-            class="format-text block mt-2 text-xl font-medium text-black hover:bg-cyan-500 dark:text-white rounded-xl p-2 transition duration-200"
-            >Inicio</a
+            href="#beauty"
+            class="block rounded-xl p-2 text-xl font-medium text-black transition-colors duration-200 hover:bg-cyan-500 dark:text-white"
           >
+            beauty
+          </a>
         </li>
         <li>
           <a
-            href="#"
-            class="format-text block mt-2 text-xl font-medium text-black hover:bg-cyan-500 dark:text-white rounded-xl p-2 transition duration-200"
-            >Beleza</a
+            href="#fragrances"
+            class="block rounded-xl p-2 text-xl font-medium text-black transition-colors duration-200 hover:bg-cyan-500 dark:text-white"
           >
+            fragrances
+          </a>
         </li>
         <li>
           <a
-            href="#"
-            class="format-text block mt-2 text-xl font-medium text-black hover:bg-cyan-500 dark:text-white rounded-xl p-2 transition duration-200"
-            >Mobília</a
+            href="#furniture"
+            class="block rounded-xl p-2 text-xl font-medium text-black transition-colors duration-200 hover:bg-cyan-500 dark:text-white"
           >
+            furniture
+          </a>
         </li>
         <li>
           <a
-            href="#"
-            class="format-text block mt-2 text-xl font-medium text-black hover:bg-cyan-500 dark:text-white rounded-xl p-2 transition duration-200"
-            >Comida</a
+            href="#groceries"
+            class="block rounded-xl p-2 text-xl font-medium text-black transition-colors duration-200 hover:bg-cyan-500 dark:text-white"
           >
+            groceries
+          </a>
         </li>
       </ul>
     </header>
+
     <!-- Espaço para compensar o header fixo -->
     <div class="h-[160px]"></div>
-    <!-- banner -->
-    <main class="hero-section w-full max-[403px]:mt-2.5 flex flex-col items-center" id="hero-section">
-      <section class="container-banner">
+
+    <main id="hero-section" class="hero-section flex flex-col items-center w-full max-[403px]:mt-2.5">
+      <!-- banner -->
+      <div class="container-banner">
         <section class="banner">
           <img
             src="./src/assets/imgs/banner.png"
-            class="banner-image"
             alt="banner"
+            class="banner-image"
           />
         </section>
-      </section>
+      </div>
 
-<div class="container mx-auto px-4 py-6">
-    <h2 class="text-3xl font-bold text-center format-text responsive-text txt-animation mb-6">
-      Beleza
-    </h2>
+      <div class="container mx-auto px-4 py-6">
+        <h2
+          id="beauty"
+          class="category-Title format-text responsive-text txt-animation"
+        >
+          beauty
+        </h2>
+        <div class="main-card productList">
+          <!-- cards -->
+        </div>
+      </div>
 
-    <!-- GRID RESPONSIVO -->
-    <div id="productList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-items-center">
-      <!-- Card Exemplo -->
+      <div class="container mx-auto px-4 py-6">
+        <h2
+          id="fragrances"
+          class="category-Title format-text responsive-text txt-animation"
+        >
+          fragrances
+        </h2>
+        <div class="main-card productList">
+          <!-- cards -->
+        </div>
+      </div>
 
-</main>
+      <div class="container mx-auto px-4 py-6">
+        <h2
+          id="furniture"
+          class="category-Title format-text responsive-text txt-animation"
+        >
+          furniture
+        </h2>
+        <div class="main-card productList">
+          <!-- cards -->
+        </div>
+      </div>
+
+      <div class="container mx-auto px-4 py-6">
+        <h2
+          id="groceries"
+          class="category-Title format-text responsive-text txt-animation"
+        >
+          groceries
+        </h2>
+        <div class="main-card productList">
+          <!-- cards -->
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <!-- inicializando footer -->
+    </footer>
 
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
+
