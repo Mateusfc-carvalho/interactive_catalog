@@ -12,16 +12,19 @@
 }
 
 @layer components {
+  .container {
+    @apply mx-auto px-4 py-6 w-full flex flex-col;
+  }
+  .category-Title {
+    @apply mb-4 mt-2 text-3xl font-bold text-center scroll-mt-[200px];
+  }
   .main-card {
     @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3
     lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-items-center;
   }
-  .category-Title {
-    @apply mb-6 text-3xl font-bold text-center scroll-mt-[200px];
-  }
   /* Card Container */
   .card-container {
-    @apply bg-white dark:bg-gray-900 rounded-lg shadow-md p-4 max-sm:w-72 transition-colors flex flex-col;
+    @apply bg-white dark:bg-gray-900 rounded-lg shadow-md p-4 max-sm:w-72 transition-colors flex flex-col items-center;
   }
   /* Wrapper para manter proporção sem cortar */
   .card-image-wrapper {
@@ -43,4 +46,12 @@
   .card-btn {
     @apply mt-auto w-full cursor-pointer bg-blue-600 dark:bg-emerald-500 hover:bg-blue-700 dark:hover:bg-emerald-600  text-white font-medium py-2 rounded;
   }
+}
+
+/*More products*/
+.btnMoreProducts {
+  @apply text-gray-900 dark:text-white font-medium
+  mx-auto my-6 cursor-pointer text-lg transition-all duration-200
+  hover:bg-blue-600 hover:dark:bg-emerald-400 hover:text-white
+  inline-block rounded-xl p-2 border border-cyan-700 dark:border dark:border-emerald-400;
 }

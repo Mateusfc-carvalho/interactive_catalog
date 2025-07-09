@@ -4,44 +4,64 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Preconnect e preload da fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:wght@100..900&display=swap"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:wght@100..900&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:wght@100..900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
     <title>Meu Catálogo</title>
   </head>
   <body class="bg-gray-100 dark:bg-gray-900">
     <header
+      role="banner"
       class="fixed top-0 left-0 z-50 w-full bg-gray-200 p-10 transition-colors duration-300 dark:bg-gray-800 max-[403px]:p-0"
     >
       <nav
+        role="navigation"
         class="flex flex-wrap items-center justify-between gap-2 p-2 max-[403px]:flex-col-reverse"
       >
         <button
           id="menu-toggler"
-          aria-label="abrir menu"
+          aria-label="Abrir menu"
           class="hidden cursor-pointer max-md:flex"
         >
           <img
             id="btnTogglerImage"
             src="./src/assets/imgs/menu.svg"
             class="h-10 w-10"
-            alt="botão para abrir menu"
+            alt="Botão para abrir menu"
+            loading="lazy"
           />
         </button>
         <h1 class="responsive-text txt-animation">My Catalog</h1>
         <button
           id="toggler-theme"
-          aria-label="alternar tema"
-          class="rounded-full bg-white p-2 transition-colors duration-300 dark:bg-cyan-900"
+          aria-label="Alternar tema"
+          class="rounded-full bg-white p-2 transition-colors cursor-pointer duration-300 dark:bg-cyan-900"
         >
           <img
             id="toggleThemeImage"
             src="./src/assets/imgs/moon.svg"
             class="h-8 w-8"
-            alt="alternar ícone"
+            alt="Alternar ícone"
+            loading="lazy"
           />
         </button>
       </nav>
@@ -49,110 +69,94 @@
         id="mobile-menu"
         class="mobile-menu max-md:overflow-hidden max-md:flex max-md:flex-col max-md:text-center mb-4 flex justify-evenly gap-2 max-h-0 p-2 transition-all duration-500 ease-in-out"
       >
-        <li>
-          <a
-            href="#beauty"
-            class="block rounded-xl p-2 text-xl font-medium text-black transition-colors duration-200 hover:bg-cyan-500 dark:text-white"
-          >
-            beauty
-          </a>
-        </li>
-        <li>
-          <a
-            href="#fragrances"
-            class="block rounded-xl p-2 text-xl font-medium text-black transition-colors duration-200 hover:bg-cyan-500 dark:text-white"
-          >
-            fragrances
-          </a>
-        </li>
-        <li>
-          <a
-            href="#furniture"
-            class="block rounded-xl p-2 text-xl font-medium text-black transition-colors duration-200 hover:bg-cyan-500 dark:text-white"
-          >
-            furniture
-          </a>
-        </li>
-        <li>
-          <a
-            href="#groceries"
-            class="block rounded-xl p-2 text-xl font-medium text-black transition-colors duration-200 hover:bg-cyan-500 dark:text-white"
-          >
-            groceries
-          </a>
-        </li>
+        <li><a href="#beauty" class="block rounded-xl p-2 text-lg     max-sm:text-sm font-medium text-black transition-colors duration-200 hover:bg-cyan-500 dark:text-white">beauty</a></li>
+        <li><a href="#fragrances" class="block rounded-xl p-2 text-lg max-sm:text-sm font-medium text-black transition-colors duration-200 hover:bg-cyan-500 dark:text-white">fragrances</a></li>
+        <li><a href="#furniture" class="block rounded-xl p-2 text-lg  max-sm:text-sm font-medium text-black transition-colors duration-200 hover:bg-cyan-500 dark:text-white">furniture</a></li>
+        <li><a href="#groceries" class="block rounded-xl p-2 text-lg  max-sm:text-sm font-medium text-black transition-colors duration-200 hover:bg-cyan-500 dark:text-white">groceries</a></li>
       </ul>
     </header>
 
     <!-- Espaço para compensar o header fixo -->
     <div class="h-[160px]"></div>
 
-    <main id="hero-section" class="hero-section flex flex-col items-center w-full max-[403px]:mt-2.5">
-      <!-- banner -->
+    <main id="hero-section" role="main" class="hero-section flex flex-col items-center w-full max-[403px]:mt-2.5">
+      <!-- Banner principal (não lazy) -->
       <div class="container-banner">
         <section class="banner">
           <img
             src="./src/assets/imgs/banner.png"
-            alt="banner"
+            alt="Banner principal"
             class="banner-image"
           />
         </section>
       </div>
 
-      <div class="container mx-auto px-4 py-6">
-        <h2
-          id="beauty"
-          class="category-Title format-text responsive-text txt-animation"
-        >
-          beauty
-        </h2>
-        <div class="main-card productList">
-          <!-- cards -->
-        </div>
+      <div class="container">
+        <h2 id="beauty" class="category-Title format-text responsive-text txt-animation">beauty</h2>
+        <div class="main-card productList"><!-- cards --></div>
+        <button class="btnMoreProducts">more products...</button>
       </div>
 
-      <div class="container mx-auto px-4 py-6">
-        <h2
-          id="fragrances"
-          class="category-Title format-text responsive-text txt-animation"
-        >
-          fragrances
-        </h2>
-        <div class="main-card productList">
-          <!-- cards -->
-        </div>
+      <div class="container">
+        <h2 id="fragrances" class="category-Title format-text responsive-text txt-animation">fragrances</h2>
+        <div class="main-card productList"></div>
+        <button class="btnMoreProducts">more products...</button>
       </div>
 
-      <div class="container mx-auto px-4 py-6">
-        <h2
-          id="furniture"
-          class="category-Title format-text responsive-text txt-animation"
-        >
-          furniture
-        </h2>
-        <div class="main-card productList">
-          <!-- cards -->
-        </div>
+      <div class="container">
+        <h2 id="furniture" class="category-Title format-text responsive-text txt-animation">furniture</h2>
+        <div class="main-card productList"></div>
+        <button class="btnMoreProducts">more products...</button>
       </div>
 
-      <div class="container mx-auto px-4 py-6">
-        <h2
-          id="groceries"
-          class="category-Title format-text responsive-text txt-animation"
-        >
-          groceries
-        </h2>
-        <div class="main-card productList">
-          <!-- cards -->
-        </div>
+      <div class="container">
+        <h2 id="groceries" class="category-Title format-text responsive-text txt-animation">groceries</h2>
+        <div class="main-card productList"></div>
+        <button class="btnMoreProducts">more products...</button>
       </div>
     </main>
 
-    <footer>
-      <!-- inicializando footer -->
+    <footer
+      class="w-full bg-gray-200 dark:bg-gray-800 border-t border-gray-300 dark:border-gray-700 mt-8"
+    >
+      <div
+        class="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6"
+      >
+        <div class="flex items-center gap-3">
+          <span class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+            Feito com
+            <svg class="inline h-5 w-5 text-red-700 mx-1" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+            </svg>
+            por <span class="font-bold text-cyan-600 dark:text-cyan-400">Mateusfc</span>
+          </span>
+        </div>
+        <div class="flex gap-5">
+          <a href="https://wa.me/5589981031214?text=venho%20por%20causa%20do%20projeto" target="_blank" aria-label="Whatsapp"
+            class="rounded-full p-2 bg-green-500 hover:bg-green-600 transition-colors shadow-md dark:bg-green-600 dark:hover:bg-green-700">
+            <svg class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.22-1.63A11.93 11.93 0 0012 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.23-1.44l-.37-.22-3.69.97.99-3.59-.24-.37A9.94 9.94 0 012 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.2-7.8c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.41-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.19.05-.36-.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.35-.01-.54-.01-.19 0-.5.07-.76.34-.26.27-1 1-1 2.43 0 1.43 1.03 2.81 1.18 3 .15.19 2.03 3.1 4.92 4.23.69.3 1.23.48 1.65.61.69.22 1.32.19 1.81.12.55-.08 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/Mateusfc-carvalho" target="_blank" aria-label="GitHub"
+            class="rounded-full p-2 bg-gray-900 hover:bg-gray-700 transition-colors shadow-md dark:bg-gray-700 dark:hover:bg-gray-600">
+            <svg class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.726-4.033-1.415-4.033-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.304-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.803 5.625-5.475 5.922.43.37.823 1.102.823 2.222v3.293c0 .32.218.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/mateus-f-carvalho-b36b61286" target="_blank" aria-label="LinkedIn"
+            class="rounded-full p-2 bg-blue-600 hover:bg-blue-700 transition-colors shadow-md dark:bg-blue-700 dark:hover:bg-blue-800">
+            <svg class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zm15.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.38-1.54 2.85-1.54 3.05 0 3.61 2.01 3.61 4.62v5.56z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="text-center text-xs text-gray-500 dark:text-gray-400 pb-4">
+        &copy; 2024 Mateusfc. Todos os direitos reservados.
+      </div>
     </footer>
 
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/main.js" defer></script>
   </body>
 </html>
-
